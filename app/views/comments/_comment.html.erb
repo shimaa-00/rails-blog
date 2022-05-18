@@ -1,0 +1,14 @@
+<% unless comment.archived? %>
+<p>
+    <strong>Commenter:</strong>
+    <%= comment.user.first_name + ' ' + comment.user.last_name %>
+</p>
+<p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+</p>
+<% end %>
+
+<%= button_to [comment.article, comment], method: :delete do %>
+    Delete Comment
+<% end %>

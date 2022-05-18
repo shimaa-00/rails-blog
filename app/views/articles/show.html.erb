@@ -1,0 +1,24 @@
+<h1> Show Article </h1>
+
+<h2><%= @article.title %></h2>
+
+<p><%= @article.body %></p>
+
+<p><%= @article.status %></p>
+
+<ul>
+  <li><%= link_to "Home", articles_path %></li>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>  
+</ul>
+<%= button_to article_path(@article), method: :delete do %>
+  Delete
+<% end %>  
+
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+  
+
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
